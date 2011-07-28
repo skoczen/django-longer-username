@@ -8,7 +8,7 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Changing field 'User.username'
-        db.alter_column('auth_user', 'username', models.CharField(max_length=MAX_USERNAME_LENGTH))
+        db.alter_column('auth_user', 'username', models.CharField(max_length=MAX_USERNAME_LENGTH()))
 
 
     def backwards(self, orm):

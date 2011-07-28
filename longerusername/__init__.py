@@ -1,8 +1,7 @@
 from django.conf import settings
 
-@property
 def MAX_USERNAME_LENGTH():
-    if "MAX_USERNAME_LENGTH" in settings:
+    if hasattr(settings,"MAX_USERNAME_LENGTH"):
         return settings.MAX_USERNAME_LENGTH
     else:
         return 255
