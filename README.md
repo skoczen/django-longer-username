@@ -19,13 +19,12 @@ You will also need to install [south]() to use the migration.
 
 Step 2. Add `longerusername` to your installed apps.
 -------------------------
-Add 'longerusername' to you installed apps in settings.py
+Add 'longerusername' to the top of your `INSTALLED_APPS` in settings.py
 
 settings.py
-```
-INSTALLED_APPS += (
-    "longerusername",
-)
+
+```python
+INSTALLED_APPS = ("longerusername",) + INSTALLED_APPS
 ```
 
 Step 3. (Optional) Specify a custom username length
@@ -33,7 +32,8 @@ Step 3. (Optional) Specify a custom username length
 If you want to specify a custom length, add it to settings.py. The default is 255 characters.
 
 settings.py
-```
+
+```python
 MAX_USERNAME_LENGTH = 100  # optional, default is 255.
 ```
 
