@@ -48,6 +48,23 @@ $ python manage.py migrate longerusername
 That's it, you should be good to go!
 
 
+Notes about the built-in forms
+==============================
+This app also automatically monkey patches the User forms in the Django admin to remove the 30 character limit.
+
+It provides a suitable replacement for the standard AuthenticationForm as well, but due to the implementation you must manually utilize it.
+
+urls.py
+
+```python
+from longerusername.forms import AuthenticationForm
+
+urlpatterns = patterns('',
+    # ...
+    (r'^accounts/login/$', 'django.contrib.auth.views.login', {'authentication_form': AuthenticationForm}),
+)
+```
+
 Credits
 =======
 
