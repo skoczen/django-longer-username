@@ -5,8 +5,9 @@ from django import forms
 from longerusername import MAX_USERNAME_LENGTH
 
 def update_username_field(field):
+    field.widget.attrs['maxlength'] = MAX_USERNAME_LENGTH()
     field.max_length = MAX_USERNAME_LENGTH()
-    field.help_text = _("Required. Only letters, numbers, and @, ., +, -, or _ characters.")
+    field.help_text = _("Required, %s characters or fewer. Only letters, numbers, and characters such as @.+_- are allowed." % MAX_USERNAME_LENGTH())
 
 class UserCreationForm(auth_forms.UserCreationForm):
     def __init__(self, *args, **kwargs):

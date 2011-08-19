@@ -5,6 +5,6 @@ from longerusername import MAX_USERNAME_LENGTH
 def longer_username(sender, *args, **kwargs):
     if sender.__name__ == "User" and sender.__module__ == "django.contrib.auth.models":
         sender._meta.get_field("username").max_length = MAX_USERNAME_LENGTH()
-        sender._meta.get_field("username").help_text = _("Required. Only letters, numbers, and @, ., +, -, or _ characters.")
+        sender._meta.get_field("username").help_text = _("Required, %s characters or fewer. Only letters, numbers, and @, ., +, -, or _ characters." % MAX_USERNAME_LENGTH())
 
 class_prepared.connect(longer_username)
