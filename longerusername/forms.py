@@ -8,7 +8,9 @@ from longerusername import MAX_USERNAME_LENGTH
 def update_username_field(field):
     field.widget.attrs['maxlength'] = MAX_USERNAME_LENGTH()
     field.max_length = MAX_USERNAME_LENGTH()
-    field.help_text = _("Required, %s characters or fewer. Only letters, numbers, and characters such as @.+_- are allowed." % MAX_USERNAME_LENGTH())
+    field.help_text = _("Required, %s characters or fewer. Only letters, "
+                        "numbers, and characters such as @.+_- are "
+                        "allowed." % MAX_USERNAME_LENGTH())
 
     # we need to find the MaxLengthValidator and change its
     # limit_value otherwise the auth forms will fail validation
