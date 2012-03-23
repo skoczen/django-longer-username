@@ -6,11 +6,8 @@ Usage
 =====
 Step 1. Install django-longer-username. 
 -------------------------------------
-Right now, you can either:
 
-- Download and install, or
-- `pip install -e git://github.com/GoodCloud/django-longer-username.git#egg=longerusername` it from here. If there's 
-demand, I'll look into pypi.
+- `pip install longerusername` 
 
 You will also need to install [south]() to use the migration. 
 
