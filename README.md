@@ -1,3 +1,15 @@
+
+Replaced by Django-longer-username-and-email, and Django 1.5
+============================================================
+
+If you need to extend the username model, please instead use the more maintained fork [https://github.com/madssj/django-longer-username-and-email](https://github.com/madssj/django-longer-username-and-email), or Django 1.5+'s custom user models.
+
+This project is officially no longer supported in light of those two superior options.
+
+
+Archived instructions
+=====================
+
 `django-longer-username` provides a migration and a monkeypatch to make the Django auth.user username field longer, instead of the arbitrarily short 30 characters. It's designed to be a simple include-and-forget project that makes a little headache go away.  Enjoy, and pull requests welcome!
 
 Note that [Django 1.5 or newer already includes support for custom `User` models][releasenotes15] (read [this tutorial][tutorial] and the [official documentation about *Substituting a custom User model*][documentation15]). So, you only need `django-longer-username` if you use an older Django version, or if you don't want to create your own User model for some reason.
